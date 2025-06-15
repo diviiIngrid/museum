@@ -1,0 +1,137 @@
+.footer {
+  background: linear-gradient(135deg, #4a3c31, #7a5a3c);
+  color: #f0e6d2;
+  padding: 60px 20px 40px;
+  font-family: 'Georgia', serif; 
+  border-top: 4px solid #c19a6b; 
+  background-repeat: repeat;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 280px;
+  line-height: 1.6;
+}
+
+.footer-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f7f1e7;
+  font-weight: 700;
+  border-bottom: 2px solid #c19a6b;
+  padding-bottom: 6px;
+  letter-spacing: 1.2px;
+}
+
+.footer-info p {
+  color: #d9cbb7;
+  font-style: italic;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #c19a6b;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f7f1e7;
+}
+
+.footer-links {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-links-column {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-links-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  position: relative;
+  color: #f7f1e7;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+}
+
+.footer-links-column h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #c19a6b,
+    #c19a6b 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  border-radius: 2px;
+}
+
+.footer-links-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-column ul li {
+  margin-bottom: 14px;
+}
+
+.footer-links-column ul li a {
+  color: #d9cbb7;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-links-column ul li a:hover {
+  color: #f7f1e7;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid #c19a6b;
+  text-align: center;
+  color: #d9cbb7;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

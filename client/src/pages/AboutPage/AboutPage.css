@@ -1,0 +1,105 @@
+.about-page {
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+.about-hero {
+    background-image: 
+        linear-gradient(rgba(34, 30, 25, 0.6), rgba(34, 30, 25, 0.6)),
+      url('../images/fon1.webp');
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+
+.about-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.about-section:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.about-section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.contact-info p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.about-photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+  .about-hero {
+    padding: 60px 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .about-section {
+    padding: 40px 20px;
+  }
+
+  .about-section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .about-photo {
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+

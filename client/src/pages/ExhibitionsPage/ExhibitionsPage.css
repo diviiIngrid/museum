@@ -1,0 +1,110 @@
+.exhibitions-header {
+  background-image: 
+        linear-gradient(rgba(34, 30, 25, 0.6), rgba(34, 30, 25, 0.6)),
+      url('../images/fon1.webp');
+  color: #f5f0e6; 
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.exhibitions-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.exhibitions-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #d8c6a5;
+  line-height: 1.6;
+}
+
+.exhibitions-content {
+  padding: 60px 20px;
+  background-color: #f9f7f1; /* очень светлый бежевый фон */
+}
+
+.exhibitions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.loading, .no-exhibitions {
+  text-align: center;
+  padding: 60px 0;
+  color: #8e7d65; /* теплый серо-коричневый */
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0 20px;
+}
+
+.pagination-btn, .pagination-page {
+  padding: 10px 18px;
+  background-color: #f5f0e6;
+  border: 1px solid #c7b895;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  color: #5a4d3f;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-page.active {
+  background-color: #d8c6a5; /* мягкий золотисто-бежевый */
+  color: #5a4d3f; /* тёмный коричнево-бежевый */
+  border-color: #d8c6a5;
+  box-shadow: 0 0 8px rgba(216,198,165,0.6);
+}
+
+.pagination-btn:hover:not(:disabled), 
+.pagination-page:hover:not(.active) {
+  background-color: #e6dfd2;
+  color: #4a3f31;
+  border-color: #b8a678;
+}
+
+.exhibitions-count {
+  text-align: center;
+  color: #8e7d65;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .exhibitions-header {
+    padding: 40px 20px;
+  }
+  
+  .exhibitions-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .pagination-pages {
+    display: none;
+  }
+}

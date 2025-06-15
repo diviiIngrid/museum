@@ -1,0 +1,249 @@
+.visit-header {
+  background-image: 
+    linear-gradient(rgba(34, 30, 25, 0.6), rgba(34, 30, 25, 0.6)),
+    url('../images/fon1.webp');
+  color: #fffefa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.visit-header h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: 'Merriweather', serif;
+}
+
+.visit-header p {
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+  color: #fdf6ea;
+}
+
+.reservation-success {
+  background-color: #5aa679;
+  color: #fffefa;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.reservation-success h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.success-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.visit-content {
+  padding: 60px 0;
+  background-color: #fcfbf7;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.visit-info-card {
+  background-color: #fffefa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5dbc4;
+}
+
+.info-icon {
+  font-size: 2.4rem;
+  color: #a58447;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.visit-info-card h2 {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #3c3328;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd4c2;
+  font-size: 0.95rem;
+}
+
+.day {
+  font-weight: 500;
+  color: #3c3328;
+}
+
+.note {
+  font-style: italic;
+  color: #857c6f;
+  margin-top: 15px;
+}
+
+.ticket-info,
+.location-info {
+  margin-bottom: 25px;
+}
+
+.ticket-type {
+  margin-bottom: 20px;
+}
+
+.ticket-type h3 {
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  color: #5a4f3d;
+}
+
+.ticket-type ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket-type ul li {
+  padding: 4px 0;
+  color: #3c3328;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #3c3328;
+}
+
+.directions h3 {
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  color: #5a4f3d;
+}
+
+.directions h4 {
+  margin: 12px 0 8px;
+  font-size: 1.05rem;
+  color: #4d4334;
+}
+
+.directions ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+  color: #3c3328;
+}
+
+.map-placeholder {
+  height: 200px;
+  background-color: #e5e1d9;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(80, 65, 30, 0.15);
+  color: #3c3328;
+  font-weight: 500;
+}
+
+.accessibility-info ul,
+.shop-info ul {
+  padding-left: 20px;
+  margin: 15px 0;
+  color: #3c3328;
+}
+
+.dining-info h3,
+.shop-info h3 {
+  margin: 12px 0 10px;
+  font-size: 1.15rem;
+  color: #5a4f3d;
+}
+
+.visit-cta {
+  background-color: #f6f3eb;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.visit-cta h2 {
+  margin-bottom: 15px;
+  font-size: 1.9rem;
+  font-family: 'Merriweather', serif;
+  color: #3c3328;
+}
+
+.visit-cta p {
+  margin-bottom: 20px;
+  color: #857c6f;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn,
+.success-buttons .btn {
+  padding: 12px 24px;
+  background-color: #a58447;
+  color: #fffefa;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-buttons .btn:hover,
+.success-buttons .btn:hover {
+  background-color: #8c6d33;
+}
+
+@media (max-width: 768px) {
+  .visit-header {
+    padding: 40px 0;
+  }
+
+  .visit-header h1 {
+    font-size: 2rem;
+  }
+
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons,
+  .success-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
