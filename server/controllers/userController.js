@@ -21,7 +21,7 @@ class UserController {
       }
       
       const candidate = await db.query(
-        'SELECT * FROM users WHERE email = $1',
+        'SELECT * FROM public.users WHERE email = $1',
         [email]
       );
       
@@ -32,7 +32,7 @@ class UserController {
       const hashPassword = await bcrypt.hash(password, 5);
       
       const newUser = await db.query(
-        'INSERT INTO users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, email, role',
+        'INSERT INTO public.users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, email, role',
         [name, email, hashPassword, role]
       );
       
@@ -50,7 +50,7 @@ class UserController {
       const { email, password } = req.body;
       
       const user = await db.query(
-        'SELECT * FROM users WHERE email = $1',
+        'SELECT * FROM public.users WHERE email = $1',
         [email]
       );
       
@@ -99,7 +99,7 @@ class UserController {
       const { name, email } = req.body;
       
       const user = await db.query(
-        'UPDATE users SET name = $1, email = $2 WHERE id = $3 RETURNING id, name, email, role',
+        'UPDATE public.users SET name = $1, email = $2 WHERE id = $3 RETURNING id, name, email, role',
         [name, email, req.user.id]
       );
       

@@ -12,7 +12,7 @@ class ReservationController {
       }
       // проверка существавания выставки 
       const exhibition = await db.query(
-        'SELECT * FROM exhibitions WHERE id = $1',
+        'SELECT * FROM public.exhibitions WHERE id = $1',
         [exhibition_id]
       );
       
@@ -21,7 +21,7 @@ class ReservationController {
       }
       // добавление бронирования
       const reservation = await db.query(
-        `INSERT INTO reservations 
+        `INSERT INTO public.reservations 
          (user_id, exhibition_id, reservation_date, visitor_count, visitor_name, visitor_email, visitor_phone, status) 
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
         [user_id, exhibition_id, reservation_date, visitor_count, visitor_name, visitor_email, visitor_phone, 'PENDING']
@@ -39,8 +39,8 @@ class ReservationController {
       
       const reservations = await db.query(
         `SELECT r.*, e.title as exhibition_title, e.image_url, e.ticket_price 
-         FROM reservations r
-         JOIN exhibitions e ON r.exhibition_id = e.id
+         FROM public.reservations r
+         JOIN public.exhibitions e ON r.exhibition_id = e.id
          WHERE r.user_id = $1
          ORDER BY r.created_at DESC`,
         [id]
@@ -56,8 +56,8 @@ class ReservationController {
     try {
       const reservations = await db.query(
         `SELECT r.*, e.title as exhibition_title, u.email as user_email
-         FROM reservations r
-         JOIN exhibitions e ON r.exhibition_id = e.id
+         FROM public.reservations r
+         JOIN public.exhibitions e ON r.exhibition_id = e.id
          LEFT JOIN users u ON r.user_id = u.id
          ORDER BY r.created_at DESC`
       );
@@ -78,7 +78,7 @@ class ReservationController {
       }
       
       const reservation = await db.query(
-        'UPDATE reservations SET status = $1 WHERE id = $2 RETURNING *',
+        'UPDATE public.reservations SET status = $1 WHERE id = $2 RETURNING *',
         [status, id]
       );
       
@@ -111,7 +111,7 @@ class ReservationController {
       }
       
       await db.query(
-        'UPDATE reservations SET status = $1 WHERE id = $2',
+        'UPDATE public.reservations SET status = $1 WHERE id = $2',
         ['CANCELLED', id]
       );
       

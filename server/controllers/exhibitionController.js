@@ -22,7 +22,7 @@ class ExhibitionController { // создается новая выставка
       }
       // возвращает выставку
       const exhibition = await db.query(
-        `INSERT INTO exhibitions 
+        `INSERT INTO public.exhibitions 
          (title, short_description, full_description, image_url, start_date, end_date, ticket_price) 
          VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
         [title, short_description, full_description, filename, start_date, end_date, ticket_price]
@@ -42,11 +42,11 @@ class ExhibitionController { // создается новая выставка
       const offset = (page - 1) * limit;
       
       const exhibitions = await db.query(
-        `SELECT * FROM exhibitions ORDER BY created_at DESC LIMIT $1 OFFSET $2`,
+        `SELECT * FROM public.exhibitions ORDER BY created_at DESC LIMIT $1 OFFSET $2`,
         [limit, offset]
       );
       
-      const total = await db.query('SELECT COUNT(*) FROM exhibitions');
+      const total = await db.query('SELECT COUNT(*) FROM public.exhibitions');
       
       return res.json({
         count: parseInt(total.rows[0].count),
@@ -62,7 +62,7 @@ class ExhibitionController { // создается новая выставка
       const { id } = req.params;
       
       const exhibition = await db.query(
-        'SELECT * FROM exhibitions WHERE id = $1',
+        'SELECT * FROM public.exhibitions WHERE id = $1',
         [id]
       );
       
@@ -82,7 +82,7 @@ class ExhibitionController { // создается новая выставка
       let { title, short_description, full_description, start_date, end_date, ticket_price } = req.body;
       
       const exhibition = await db.query(
-        'SELECT * FROM exhibitions WHERE id = $1',
+        'SELECT * FROM public.exhibitions WHERE id = $1',
         [id]
       );
       
@@ -98,7 +98,7 @@ class ExhibitionController { // создается новая выставка
       }
       
       const updatedExhibition = await db.query(
-        `UPDATE exhibitions 
+        `UPDATE public.exhibitions 
          SET title = $1, short_description = $2, full_description = $3, 
          image_url = $4, start_date = $5, end_date = $6, ticket_price = $7 
          WHERE id = $8 RETURNING *`,
@@ -116,7 +116,7 @@ class ExhibitionController { // создается новая выставка
       const { id } = req.params;
       
       const exhibition = await db.query(
-        'SELECT * FROM exhibitions WHERE id = $1',
+        'SELECT * FROM public.exhibitions WHERE id = $1',
         [id]
       );
       
